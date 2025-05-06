@@ -1,14 +1,23 @@
 [
     {
-      "time": "2023-10-25T12:00:00",
-      "amount": 15.5,
-      "location": "学五食堂",
-      "category": "餐饮"
+        "amount": 0,
+        "category": "未分类",
+        "location": "默认",
+        "notes": "",
+        "time": "2023-01-01T00:00:00"
     },
     {
-      "time": "2023-10-25T18:30:00",
-      "amount": 8.5,
-      "location": "物美超市",
-      "category": "生活"
+        "amount": 0,
+        "category": "未分类",
+        "location": "新交易",
+        "notes": "",
+        "time": "2025-05-06T23:59:34"
+    },
+    {
+        "amount": 100,
+        "category": "其他",
+        "location": "超市",
+        "notes": "一些生活物资",
+        "time": "2025-05-07T00:44:42"
     }
-  ]
+]

@@ -20,6 +20,10 @@ int main(int argc, char *argv[]) {
     }
 
     DataModel model;
+    if (!model.loadFromJson(dataPath)) {
+        qDebug() << "Failed to load data.json!";
+        return -1; // 退出程序
+    }
     model.loadFromJson(dataPath); // 加载数据
     MainWindow w(&model);
     w.show();
