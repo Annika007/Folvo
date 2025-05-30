@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>cat.png</file>
         <file>plus.png</file>
+        <file>qidong.png</file>
     </qresource>
     <qresource prefix="/plus"/>
     <qresource prefix="/\plus"/>

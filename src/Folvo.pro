@@ -11,13 +11,19 @@ CONFIG += c++17
 
 SOURCES += \
     DataModel.cpp \
+    TransactionViewWindow.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    myprofilewindow.cpp \
+    splashscreen.cpp
 
 HEADERS += \
     DataModel.h \
     Transaction.h \
-    mainwindow.h
+    TransactionViewWindow.h \
+    mainwindow.h \
+    myprofilewindow.h \
+    splashscreen.h
 
 FORMS += \
     mainwindow.ui \

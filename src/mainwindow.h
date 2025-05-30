@@ -6,6 +6,7 @@
 #include "DataModel.h"
 #include "Transaction.h"
 #include <QDialog>
+#include "transactionviewwindow.h"
 #include <QComboBox>
 #include <QLineEdit>
 #include <QDateTimeEdit>

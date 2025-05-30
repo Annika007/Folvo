@@ -1,5 +1,7 @@
 #include "mainwindow.h" //
 #include "DataModel.h"  //
+#include "transactionviewwindow.h"
+#include "myprofilewindow.h"
 // Qt UI 相关的头文件
 #include <QGridLayout>
 #include <QHBoxLayout>
@@ -59,11 +61,9 @@ MainWindow::MainWindow(DataModel* model, QWidget *parent)
 }
 MainWindow::~MainWindow()
 {
-    // Qt 会自动管理 m_centralWidget 及其子控件 (如果它们是以 m_centralWidget 或 this 为父对象创建的)
-    // m_addDialog 如果父对象是 this，也会被管理
+
 }
 // mainwindow.cpp
-// ... (文件顶部的 includes，确保该有的都有，特别是 <QGridLayout>, <QHBoxLayout>, <QVBoxLayout>, <QLabel>, <QPushButton>, <QPixmap>, <QIcon>) ...
 void MainWindow::initNewUI() {
     m_centralWidget = new QWidget(this);
     m_mainGridLayout = new QGridLayout(m_centralWidget);
@@ -238,6 +238,14 @@ void MainWindow::initNewUI() {
         border-radius: 35px;       /* 使其看起来是圆形 */
         border: 3px solid white;  /* 加个白色边框使其更醒目 */
     }
+    QDoubleSpinBox#amountSpinBox {
+        background-color: white; /* 确保背景是白色或其他浅色 */
+        color: black;            /* !!! 确保文字是黑色或其他深色 !!! */
+        border: 1px solid #ced4da; /*  添加一个边框 */
+        border-radius: 4px;       /*  轻微圆角 */
+        padding: 2px 5px;         /*  内边距 */
+        font-size: 13px;          /*  字体大小 */
+    }
     QPushButton#plusButton:hover { background-color: #005cbf; }
     QPushButton#plusButton:pressed { background-color: #0052b3; }
 
@@ -261,6 +269,7 @@ void MainWindow::initAddTransactionDialog()
     QFormLayout* formLayout = new QFormLayout(m_addDialog);
     m_amountEdit = new QDoubleSpinBox(m_addDialog);
     m_amountEdit->setRange(0.01, 9999999.99);
+    m_amountEdit->setObjectName("amountSpinBox");      //输入黑体
     m_amountEdit->setDecimals(2);
     m_amountEdit->setPrefix("¥ ");
     m_amountEdit->setAlignment(Qt::AlignRight);
@@ -345,7 +354,9 @@ void MainWindow::onRightBar_SaveDataClicked() {
 }
 // --- 次级窗口的槽函数 (暂时用提示信息替代) ---
 void MainWindow::onBottomBar_ViewTransactionsClicked() {
-    QMessageBox::information(this, "功能提示", "查看账单流水功能正在开发中！\n将在此处打开交易列表窗口。");
+    TransactionViewWindow *viewWindow = new TransactionViewWindow(m_model, this); // 父窗口设为 this
+
+    viewWindow->show(); // 非模态显示
 }
 void MainWindow::onBottomBar_ReportsClicked() {
     QMessageBox::information(this, "功能提示", "统计报表功能正在开发中！\n将在此处打开报表分析窗口。");
@@ -354,7 +365,8 @@ void MainWindow::onRightBar_SettingsClicked() {
     QMessageBox::information(this, "功能提示", "应用设置功能正在开发中！\n将在此处打开设置对话框。");
 }
 void MainWindow::onRightBar_ProfileClicked() {
-    QMessageBox::information(this, "功能提示", "我的成就/资料功能正在开发中！\n将在此处打开个人中心。");
+    MyProfileWindow *profileWin = new MyProfileWindow(m_model, this);
+    profileWin->show();
 }
 void MainWindow::onConfirmAddTransaction()
 {
