@@ -7,11 +7,12 @@
 #include <QPixmap>        // 包含 QPixmap 用于加载图片
 #include <QMessageBox>    // 用于更友好的错误提示
 #include <QEventLoop>     // 用于确保启动画面能完整显示和处理事件
-
+#include "SavingsPlanAdapter.h"
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
-
+    // 注册元类型
+    SavingsPlanAdapter::registerMetaType();
     QPixmap brandPixmap(":/qidong.png");
 
     SplashScreen* splash = nullptr;

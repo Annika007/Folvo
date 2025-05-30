@@ -1,0 +1,77 @@
+{
+    "savingsGoals": [
+    ],
+    "transactions": [
+        {
+            "amount": 0,
+            "category": "未分类",
+            "location": "默认",
+            "notes": "",
+            "time": "2025-05-05T23:56:47"
+        },
+        {
+            "amount": 0,
+            "category": "未分类",
+            "location": "新交易",
+            "notes": "",
+            "time": "2025-05-05T23:57:05"
+        },
+        {
+            "amount": 0,
+            "category": "未分类",
+            "location": "新交易",
+            "notes": "",
+            "time": "2025-05-05T23:57:09"
+        },
+        {
+            "amount": 0,
+            "category": "未分类",
+            "location": "新交易",
+            "notes": "",
+            "time": "2025-05-05T23:57:10"
+        },
+        {
+            "amount": 0,
+            "category": "未分类",
+            "location": "新交易",
+            "notes": "",
+            "time": "2025-05-05T23:57:11"
+        },
+        {
+            "amount": 0,
+            "category": "未分类",
+            "location": "新交易",
+            "notes": "",
+            "time": "2025-05-05T23:57:12"
+        },
+        {
+            "amount": 80,
+            "category": "餐饮",
+            "location": "食堂",
+            "notes": "",
+            "time": "2025-05-09T14:15:55"
+        },
+        {
+            "amount": 10,
+            "category": "餐饮",
+            "location": "教学楼",
+            "notes": "",
+            "time": "2025-05-09T14:36:32"
+        },
+        {
+            "amount": 110,
+            "category": "餐饮",
+            "location": "学一",
+            "notes": "",
+            "time": "2025-05-09T14:42:45"
+        },
+        {
+            "amount": 0.009999999776482582,
+            "category": "医疗",
+            "location": "图书馆",
+            "notes": "为什么无法更新账目条数",
+            "time": "2025-05-30T10:48:03"
+        }
+    ],
+    "version": 1
+}

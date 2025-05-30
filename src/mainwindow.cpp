@@ -28,6 +28,8 @@
 #include <QDebug>
 
 // #include "settingsdialog.h"
+
+#include "AnalysisDialog.h"
 MainWindow::MainWindow(DataModel* model, QWidget *parent)
     : QMainWindow(parent), // 基类是 QMainWindow
     m_model(model),
@@ -259,7 +261,9 @@ void MainWindow::onBottomBar_SavingsPlanClicked() {
     QMessageBox::information(this, "存钱计划", "存钱计划功能模块正在快马加鞭开发中！");
 }
 void MainWindow::onBottomBar_AiAnalysisClicked() {
-    QMessageBox::information(this, "AI 分析", "智能 AI 分析功能模块即将上线，敬请期待！");
+    // QMessageBox::information(this, "AI 分析", "智能 AI 分析功能模块即将上线，敬请期待！");
+    auto* dialog = new AnalysisDialog(m_model, this);
+    dialog->exec();
 }
 void MainWindow::initAddTransactionDialog()
 {
